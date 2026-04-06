@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Avinash Earla — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --card: #1c1c1c;
+    --border: rgba(255,255,255,0.08);
+    --accent: #b8ff57;
+    --accent2: #57c8ff;
+    --text: #f0ede6;
+    --muted: #888;
+    --font-head: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 2.5rem;
+    background: rgba(13,13,13,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--accent); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; font-family: var(--font-mono); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 2.5rem 5rem;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .hero-bg-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: var(--font-head); font-size: clamp(6rem, 18vw, 18rem); font-weight: 800;
+    color: rgba(255,255,255,0.02); white-space: nowrap; pointer-events: none;
+    letter-spacing: -0.05em; user-select: none;
+  }
+  .hero-tag {
+    font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
+  .hero-title {
+    font-family: var(--font-head); font-size: clamp(2.8rem, 7vw, 6.5rem);
+    font-weight: 800; letter-spacing: -0.04em; line-height: 0.95;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title span { color: var(--accent); }
+  .hero-sub {
+    max-width: 560px; color: var(--muted); font-size: 1rem; line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.05em;
+    text-decoration: none; border-radius: 3px; transition: all 0.2s; cursor: pointer;
+    border: none;
+  }
+  .btn-primary { background: var(--accent); color: #0d0d0d; font-weight: 500; }
+  .btn-primary:hover { background: #ceff7a; }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.3); }
+  .hero-scroll-hint {
+    position: absolute; right: 2.5rem; bottom: 4rem;
+    writing-mode: vertical-rl; font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-scroll-hint::after { content: ''; display: block; width: 1px; height: 48px; background: var(--muted); }
+
+  /* SECTION COMMONS */
+  section { padding: 6rem 2.5rem; border-bottom: 1px solid var(--border); }
+  .section-label {
+    font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);
+    letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 3rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+  .section-title {
+    font-family: var(--font-head); font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800; letter-spacing: -0.04em; line-height: 1;
+    margin-bottom: 3rem;
+  }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-text p { color: var(--muted); font-size: 1rem; margin-bottom: 1rem; }
+  .about-text p strong { color: var(--text); font-weight: 500; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .stat-box { background: var(--card); padding: 1.75rem 1.5rem; }
+  .stat-num { font-family: var(--font-head); font-size: 2.5rem; font-weight: 800; color: var(--accent); letter-spacing: -0.04em; line-height: 1; }
+  .stat-label { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.4rem; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .skill-group { background: var(--card); padding: 1.75rem; }
+  .skill-group-title { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent2); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag {
+    font-family: var(--font-mono); font-size: 0.75rem;
+    padding: 0.3rem 0.75rem; border: 1px solid var(--border);
+    color: var(--muted); background: transparent; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* EXPERIENCE */
+  .exp-item {
+    display: grid; grid-template-columns: 200px 1fr; gap: 3rem;
+    padding: 2.5rem 0; border-top: 1px solid var(--border);
+  }
+  .exp-item:last-child { border-bottom: 1px solid var(--border); }
+  .exp-company { font-family: var(--font-head); font-weight: 700; font-size: 1rem; color: var(--text); }
+  .exp-period { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; margin-top: 0.4rem; }
+  .exp-type { font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.3rem; }
+  .exp-role { font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--text); }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li { position: relative; padding-left: 1.25rem; color: var(--muted); font-size: 0.92rem; margin-bottom: 0.6rem; }
+  .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .project-card { background: var(--card); padding: 2rem; position: relative; overflow: hidden; transition: background 0.2s; }
+  .project-card:hover { background: #222; }
+  .project-num { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 1.25rem; }
+  .project-name { font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; line-height: 1.1; }
+  .project-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem; }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .project-links { display: flex; gap: 0.75rem; margin-top: 1.25rem; }
+  .project-link {
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent2);
+    text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+    border-bottom: 1px solid rgba(87,200,255,0.3); padding-bottom: 1px; transition: all 0.2s;
+  }
+  .project-link:hover { color: var(--text); border-color: var(--text); }
+
+  /* CERTIFICATIONS */
+  .certs-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .cert-item { background: var(--card); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .cert-issuer { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; }
+  .cert-name { font-size: 0.9rem; color: var(--text); font-weight: 400; line-height: 1.4; }
+
+  /* CONTACT */
+  #contact { text-align: center; }
+  .contact-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap; }
+  .contact-link {
+    font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted);
+    text-decoration: none; letter-spacing: 0.08em;
+    padding: 0.75rem 1.5rem; border: 1px solid var(--border);
+    transition: all 0.2s; border-radius: 2px;
+  }
+  .contact-link:hover { color: var(--accent); border-color: var(--accent); }
+  .contact-email { font-family: var(--font-head); font-size: clamp(1.5rem, 3.5vw, 3rem); font-weight: 800; letter-spacing: -0.03em; color: var(--accent); margin-top: 1.5rem; word-break: break-all; }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { gap: 1.2rem; }
+    section { padding: 4rem 1.25rem; }
+    #hero { padding: 7rem 1.25rem 4rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#hero">AE</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Work</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg-text">DEV</div>
+  <div class="hero-tag">Available for opportunities</div>
+  <h1 class="hero-title">Avinash<br><span>Earla.</span></h1>
+  <p class="hero-sub">Full-stack developer building secure, scalable products with FastAPI, React, and Python — with a focus on AI/cloud integrations and measurable impact.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="#contact">Get in touch</a>
+    <a class="btn btn-outline" href="#projects">View projects</a>
+  </div>
+  <div class="hero-scroll-hint">Scroll</div>
+</section>
+
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a <strong>full-stack developer</strong> based in Hyderabad, India, currently working at Sakesh Solutions LLC on LotusPetal.ai — an AI-powered proposal intelligence platform.</p>
+      <p>I specialize in building reliable backend systems, clean APIs, and user-centric frontends. My work spans <strong>authentication flows, automated ML pipelines, cloud deployments, and AI integrations</strong>.</p>
+      <p>I hold a B.Tech in Computer Science from R.V.R. & J.C. College of Engineering (CGPA: 8.54/10) with a minor in Cloud Computing, and I'm continuously leveling up — from LangChain & LangGraph to agentic AI systems.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-num">~90%</div>
+        <div class="stat-label">Manual effort reduced</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">100+</div>
+        <div class="stat-label">Analyst hours saved/mo</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">40%</div>
+        <div class="stat-label">DB query speed improvement</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">150+</div>
+        <div class="stat-label">DSA problems solved</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <div class="section-title">Technical Stack</div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">SQL</span>
+        <span class="tag">JavaScript</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Frameworks & Databases</div>
+      <div class="skill-tags">
+        <span class="tag">FastAPI</span>
+        <span class="tag">React.js</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">pgvector</span>
+        <span class="tag">SQLite</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">AI / ML</div>
+      <div class="skill-tags">
+        <span class="tag">LangChain</span>
+        <span class="tag">LangGraph</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">Agentic AI</span>
+        <span class="tag">RAG</span>
+        <span class="tag">Deep Learning</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Cloud & DevOps</div>
+      <div class="skill-tags">
+        <span class="tag">Microsoft Azure</span>
+        <span class="tag">AWS</span>
+        <span class="tag">GCP</span>
+        <span class="tag">Docker</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">Kubernetes</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Auth & Security</div>
+      <div class="skill-tags">
+        <span class="tag">JWT</span>
+        <span class="tag">OAuth 2.0</span>
+        <span class="tag">REST API Design</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Engineering</div>
+      <div class="skill-tags">
+        <span class="tag">DSA</span>
+        <span class="tag">OOP</span>
+        <span class="tag">SDLC</span>
+        <span class="tag">Git / GitHub</span>
+        <span class="tag">Testing & Debugging</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <div class="section-title">Work History</div>
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-company">Sakesh Solutions LLC</div>
+      <div class="exp-period">Jun 2024 – Present</div>
+      <div class="exp-type">Full-time · On-site</div>
+    </div>
+    <div class="exp-content">
+      <div class="exp-role">Associate Developer</div>
+      <ul class="exp-bullets">
+        <li>Plan, design, and develop scalable backend microservices using Python and FastAPI, deployed via Docker and cloud infrastructure.</li>
+        <li>Automated AI/ML dataset pipelines that saved 100+ analyst hours per month and reduced manual work by ~90%.</li>
+        <li>Optimized database architecture and SQL queries, achieving a 40% improvement in data retrieval speeds for reporting modules.</li>
+        <li>Built secure authentication flows with JWT/OAuth 2.0; performed rigorous unit testing for production reliability.</li>
+        <li>Collaborated with stakeholders across the full product lifecycle — development, testing, deployment, and issue resolution.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <div class="section-title">Selected Work</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-num">01</div>
+      <div class="project-name">AI Personal Knowledge Assistant</div>
+      <p class="project-desc">A Retrieval-Augmented Generation (RAG) system that automates information retrieval from large datasets using Google Gemini and vector search. Architected for sub-second latency with efficient document indexing.</p>
+      <div class="project-stack">
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Google Gemini</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">pgvector</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://github.com/avinashearla86/Ai-knowledge-Assistant" target="_blank">GitHub ↗</a>
+        <a class="project-link" href="https://ai-knowledge-assistant-gamma.vercel.app/" target="_blank">Live Demo ↗</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">02</div>
+      <div class="project-name">Expense Tracker Application</div>
+      <p class="project-desc">Full-stack financial management app with a React frontend, Python/FastAPI backend, normalized SQLite schema, and JWT-based authentication. Supports complex financial queries with data integrity guarantees.</p>
+      <div class="project-stack">
+        <span class="tag">React</span>
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">JWT</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://github.com/avinashearla86/Expense-tracker-fastapi" target="_blank">GitHub ↗</a>
+        <a class="project-link" href="https://expense-tracker-fastapi-topaz.vercel.app/login" target="_blank">Live Demo ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="section-label">Certifications</div>
+  <div class="section-title">Credentials</div>
+  <div class="certs-list">
+    <div class="cert-item">
+      <div class="cert-issuer">Oracle Cloud</div>
+      <div class="cert-name">OCI 2025 Certified AI Foundations Associate</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-issuer">Microsoft Azure</div>
+      <div class="cert-name">Azure Cloud Fundamentals</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-issuer">Google Cloud</div>
+      <div class="cert-name">Cloud Digital Leader</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-issuer">AWS Academy</div>
+      <div class="cert-name">Cloud Foundations</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-issuer">Microsoft</div>
+      <div class="cert-name">Technology Associate — Python Programming</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-issuer">Wipro TalentNext</div>
+      <div class="cert-name">Full-Stack Development Certification</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">Let's build something.</div>
+  <p style="color: var(--muted); max-width: 480px; margin: 0 auto;">Open to full-time roles, contract work, and collaborations in full-stack, backend, or AI/ML engineering.</p>
+  <a href="mailto:avinashearla@gmail.com" class="contact-email" style="text-decoration: none;">avinashearla@gmail.com</a>
+  <div class="contact-links">
+    <a class="contact-link" href="https://linkedin.com/in/avinash-earla-3a6036258" target="_blank">LinkedIn ↗</a>
+    <a class="contact-link" href="https://github.com/avinashearla86" target="_blank">GitHub ↗</a>
+    <a class="contact-link" href="tel:+918688437262">+91 86884 37262</a>
+ 
