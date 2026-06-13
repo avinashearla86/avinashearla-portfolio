@@ -162,6 +162,15 @@
   }
   .project-link:hover { color: var(--text); border-color: var(--text); }
 
+  /* EDUCATION */
+  .edu-list { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .edu-item { background: var(--card); padding: 2rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; }
+  .edu-school { font-family: var(--font-head); font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+  .edu-meta { text-align: right; }
+  @media (max-width: 768px) { .edu-meta { text-align: left; } }
+  .edu-period { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.08em; }
+  .edu-degree { color: var(--muted); font-size: 0.95rem; margin-top: 0.5rem; }
+
   /* CERTIFICATIONS */
   .certs-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
   .cert-item { background: var(--card); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
@@ -213,8 +222,9 @@
 
 <section id="hero">
   <div class="hero-bg-text">DEV</div>
+  <div class="hero-tag">Full-Stack Engineer</div>
   <h1 class="hero-title">Avinash<br><span>Earla.</span></h1>
-  <p class="hero-sub">Full-stack developer building secure, scalable products with FastAPI, React, and Python — with a focus on AI/cloud integrations and measurable impact.</p>
+  <p class="hero-sub">Full-stack developer building secure, scalable products with Python, FastAPI, React, and SQL — focusing on cloud deployments, computer vision, and AI integrations.</p>
   <div class="hero-ctas">
     <a class="btn btn-primary" href="#contact">Get in touch</a>
     <a class="btn btn-outline" href="#projects">View projects</a>
@@ -226,26 +236,26 @@
   <div class="section-label">About</div>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm a <strong>full-stack developer</strong> based in Hyderabad, India, currently working at Sakesh Solutions LLC on LotusPetal.ai — an AI-powered proposal intelligence platform.</p>
-      <p>I specialize in building reliable backend systems, clean APIs, and user-centric frontends. My work spans <strong>authentication flows, automated ML pipelines, cloud deployments, and AI integrations</strong>.</p>
-      <p>I hold a B.Tech in Computer Science from R.V.R. & J.C. College of Engineering (CGPA: 8.54/10) with a minor in Cloud Computing, and I'm continuously leveling up — from LangChain & LangGraph to agentic AI systems.</p>
+      <p>I'm a <strong>full-stack developer</strong> based in Hyderabad, India, currently working as an Associate Developer at Sakesh Solutions LLC.</p>
+      <p>I specialize in designing and building scalable backend microservices, real-time data pipelines, and optimized databases. My experience spans <strong>REST API architectures, containerized deployments, liveness detection logic, and custom ML audits</strong>.</p>
+      <p>I graduated with a B.Tech in Computer Science and Business Systems from R.V.R. & J.C. College of Engineering, and I continuously seek to push limits in cloud engineering and intelligent agent architectures.</p>
     </div>
     <div class="stats-grid">
-      <div class="stat-box">
-        <div class="stat-num">~90%</div>
-        <div class="stat-label">Manual effort reduced</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">100+</div>
-        <div class="stat-label">Analyst hours saved/mo</div>
-      </div>
       <div class="stat-box">
         <div class="stat-num">40%</div>
         <div class="stat-label">DB query speed improvement</div>
       </div>
       <div class="stat-box">
+        <div class="stat-num">75%</div>
+        <div class="stat-label">Frame latency reduced</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">99.8%</div>
+        <div class="stat-label">Liveness check accuracy</div>
+      </div>
+      <div class="stat-box">
         <div class="stat-num">150+</div>
-        <div class="stat-label">DSA problems solved</div>
+        <div class="stat-label">LeetCode problems solved</div>
       </div>
     </div>
   </div>
@@ -260,7 +270,6 @@
       <div class="skill-tags">
         <span class="tag">Python</span>
         <span class="tag">SQL</span>
-        <span class="tag">JavaScript</span>
       </div>
     </div>
     <div class="skill-group">
@@ -270,47 +279,29 @@
         <span class="tag">React.js</span>
         <span class="tag">PostgreSQL</span>
         <span class="tag">MySQL</span>
+        <span class="tag">Recharts</span>
         <span class="tag">pgvector</span>
-        <span class="tag">SQLite</span>
+        <span class="tag">Git / GitHub</span>
       </div>
     </div>
     <div class="skill-group">
-      <div class="skill-group-title">AI / ML</div>
-      <div class="skill-tags">
-        <span class="tag">LangChain</span>
-        <span class="tag">LangGraph</span>
-        <span class="tag">LLMs</span>
-        <span class="tag">Agentic AI</span>
-        <span class="tag">RAG</span>
-        <span class="tag">Deep Learning</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Cloud & DevOps</div>
+      <div class="skill-group-title">Cloud & Infrastructure</div>
       <div class="skill-tags">
         <span class="tag">Microsoft Azure</span>
         <span class="tag">AWS</span>
-        <span class="tag">GCP</span>
         <span class="tag">Docker</span>
-        <span class="tag">CI/CD</span>
-        <span class="tag">Kubernetes</span>
+        <span class="tag">Kubernetes Basics</span>
+        <span class="tag">CI/CD Pipelines</span>
+        <span class="tag">Render</span>
       </div>
     </div>
     <div class="skill-group">
-      <div class="skill-group-title">Auth & Security</div>
-      <div class="skill-tags">
-        <span class="tag">JWT</span>
-        <span class="tag">OAuth 2.0</span>
-        <span class="tag">REST API Design</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Engineering</div>
+      <div class="skill-group-title">Software Engineering</div>
       <div class="skill-tags">
         <span class="tag">DSA</span>
         <span class="tag">OOP</span>
+        <span class="tag">REST API Design</span>
         <span class="tag">SDLC</span>
-        <span class="tag">Git / GitHub</span>
         <span class="tag">Testing & Debugging</span>
       </div>
     </div>
@@ -323,17 +314,16 @@
   <div class="exp-item">
     <div class="exp-meta">
       <div class="exp-company">Sakesh Solutions LLC</div>
-      <div class="exp-period">Jun 2024 – Present</div>
-      <div class="exp-type">Full-time · On-site</div>
+      <div class="exp-period">Jun 2025 – Present</div>
+      <div class="exp-type">Associate Developer</div>
     </div>
     <div class="exp-content">
       <div class="exp-role">Associate Developer</div>
       <ul class="exp-bullets">
-        <li>Plan, design, and develop scalable backend microservices using Python and FastAPI, deployed via Docker and cloud infrastructure.</li>
-        <li>Automated AI/ML dataset pipelines that saved 100+ analyst hours per month and reduced manual work by ~90%.</li>
-        <li>Optimized database architecture and SQL queries, achieving a 40% improvement in data retrieval speeds for reporting modules.</li>
-        <li>Built secure authentication flows with JWT/OAuth 2.0; performed rigorous unit testing for production reliability.</li>
-        <li>Collaborated with stakeholders across the full product lifecycle — development, testing, deployment, and issue resolution.</li>
+        <li>Plan, design, and develop scalable software enhancements and backend microservices using **Python** and **FastAPI**.</li>
+        <li>Perform rigorous unit testing and debugging to ensure high **reliability** and **maintainability** of production code.</li>
+        <li>Collaborate with stakeholders to define user requirements, deploying robust solutions via **Docker** and cloud infrastructure.</li>
+        <li>Optimized database architecture and SQL queries, achieving a **40% improvement** in data retrieval speeds for reporting modules.</li>
       </ul>
     </div>
   </div>
@@ -345,14 +335,14 @@
   <div class="projects-grid">
     <div class="project-card">
       <div class="project-num">01</div>
-      <div class="project-name">AI Personal Knowledge Assistant</div>
-      <p class="project-desc">A Retrieval-Augmented Generation (RAG) system that automates information retrieval from large datasets using Google Gemini and vector search. Architected for sub-second latency with efficient document indexing.</p>
+      <div class="project-name">AI Personal Knowledge Assistant (RAG)</div>
+      <p class="project-desc">A Retrieval-Augmented Generation (RAG) system that chunks documents into 1,000-character segments, generates 384-dimensional vector embeddings locally via FastEmbed, and indexes them in PostgreSQL (pgvector) for sub-second semantic search. Bypasses cloud API fees by running local ONNX-based models and leverages Gemini restricted search results (top-8 chunks) to eliminate hallucination.</p>
       <div class="project-stack">
         <span class="tag">Python</span>
         <span class="tag">FastAPI</span>
         <span class="tag">Google Gemini</span>
-        <span class="tag">Supabase</span>
         <span class="tag">pgvector</span>
+        <span class="tag">React</span>
       </div>
       <div class="project-links">
         <a class="project-link" href="https://github.com/avinashearla86/Ai-knowledge-Assistant" target="_blank">GitHub ↗</a>
@@ -361,18 +351,37 @@
     </div>
     <div class="project-card">
       <div class="project-num">02</div>
-      <div class="project-name">Expense Tracker Application</div>
-      <p class="project-desc">Full-stack financial management app with a React frontend, Python/FastAPI backend, normalized SQLite schema, and JWT-based authentication. Supports complex financial queries with data integrity guarantees.</p>
+      <div class="project-name">Smart Attendance Platform</div>
+      <p class="project-desc">Engineered a real-time computer vision check-in portal. Built an anti-spoofing liveness verification service using a MediaPipe Eye Aspect Ratio (EAR) state machine, achieving 99.8% verification accuracy. Optimized frame delivery over a real-time WebSocket pipeline (150ms intervals) to reduce latency by 75% (sub-80ms processing). Integrates a Random Forest classifier auditing historical delays to predict late-risk profiles at 92% accuracy.</p>
       <div class="project-stack">
         <span class="tag">React</span>
-        <span class="tag">Python</span>
         <span class="tag">FastAPI</span>
-        <span class="tag">SQLite</span>
-        <span class="tag">JWT</span>
+        <span class="tag">MediaPipe</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">Docker</span>
       </div>
       <div class="project-links">
-        <a class="project-link" href="https://github.com/avinashearla86/Expense-tracker-fastapi" target="_blank">GitHub ↗</a>
-        <a class="project-link" href="https://expense-tracker-fastapi-topaz.vercel.app/login" target="_blank">Live Demo ↗</a>
+        <a class="project-link" href="https://github.com/avinashearla86/smart-attendance-platform" target="_blank">GitHub ↗</a>
+        <a class="project-link" href="https://smart-attendance-platform.vercel.app/" target="_blank">Live Demo ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-label">Education</div>
+  <div class="section-title">Academic Details</div>
+  <div class="edu-list">
+    <div class="edu-item">
+      <div>
+        <div class="edu-school">R.V.R. & J.C. College of Engineering</div>
+        <div class="edu-degree">B.Tech in Computer Science and Business Systems (Minor: Cloud Computing)</div>
+        <div class="edu-degree"><strong>CGPA: 8.54 / 10.0</strong></div>
+      </div>
+      <div class="edu-meta">
+        <div class="edu-period">2020 – 2024</div>
+        <div class="edu-degree">Guntur, Andhra Pradesh</div>
       </div>
     </div>
   </div>
@@ -383,7 +392,7 @@
   <div class="section-title">Credentials</div>
   <div class="certs-list">
     <div class="cert-item">
-      <div class="cert-issuer">Oracle Cloud</div>
+      <div class="cert-issuer">Oracle Cloud Infrastructure</div>
       <div class="cert-name">OCI 2025 Certified AI Foundations Associate</div>
     </div>
     <div class="cert-item">
@@ -398,14 +407,6 @@
       <div class="cert-issuer">AWS Academy</div>
       <div class="cert-name">Cloud Foundations</div>
     </div>
-    <div class="cert-item">
-      <div class="cert-issuer">Microsoft</div>
-      <div class="cert-name">Technology Associate — Python Programming</div>
-    </div>
-    <div class="cert-item">
-      <div class="cert-issuer">Wipro TalentNext</div>
-      <div class="cert-name">Full-Stack Development Certification</div>
-    </div>
   </div>
 </section>
 
@@ -414,7 +415,16 @@
   <div class="section-title">Let's build something.</div>
   <a href="mailto:avinashearla@gmail.com" class="contact-email" style="text-decoration: none;">avinashearla@gmail.com</a>
   <div class="contact-links">
-    <a class="contact-link" href="https://linkedin.com/in/avinash-earla-3a6036258" target="_blank">LinkedIn ↗</a>
+    <a class="contact-link" href="https://linkedin.com/in/avinash-earla" target="_blank">LinkedIn ↗</a>
     <a class="contact-link" href="https://github.com/avinashearla86" target="_blank">GitHub ↗</a>
     <a class="contact-link" href="tel:+918688437262">+91 86884 37262</a>
- 
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Avinash Earla. All rights reserved.</div>
+  <div>Built with Syne & DM Sans</div>
+</footer>
+
+</body>
+</html>
