@@ -237,7 +237,7 @@
   <div class="about-grid">
     <div class="about-text">
       <p>I'm an <strong>AI Engineer</strong> based in Hyderabad, India, currently building intelligent platforms and agentic systems at Sakesh Solutions LLC.</p>
-      <p>I specialize in designing and deploying <strong>multi-agent orchestrations (LangGraph, CrewAI, AutoGen), Retrieval-Augmented Generation architectures, and low-latency FastAPI microservices</strong>, alongside full-stack work in React and TypeScript and containerized multi-cloud deployments.</p>
+      <p>I specialize in designing and deploying <strong>multi-agent orchestrations (LangGraph, CrewAI, AutoGen, Google ADK), Retrieval-Augmented Generation architectures, and low-latency FastAPI microservices</strong>, alongside full-stack work in React and TypeScript and containerized multi-cloud deployments.</p>
       <p>I graduated with a B.Tech in Computer Science and Business Systems from R.V.R. & J.C. College of Engineering, and I continuously seek to push limits in agentic AI, graph-based systems, and cloud engineering.</p>
     </div>
     <div class="stats-grid">
@@ -286,6 +286,7 @@
         <span class="tag">LangGraph</span>
         <span class="tag">CrewAI</span>
         <span class="tag">AutoGen</span>
+        <span class="tag">Google ADK</span>
         <span class="tag">MCP</span>
         <span class="tag">Prompt Engineering</span>
       </div>
@@ -310,6 +311,7 @@
         <span class="tag">Google Cloud</span>
         <span class="tag">Microsoft Azure</span>
         <span class="tag">CI/CD Pipelines</span>
+        <span class="tag">Terraform</span>
         <span class="tag">Model Drift Monitoring</span>
       </div>
     </div>
@@ -391,6 +393,51 @@
       <div class="project-links">
         <a class="project-link" href="https://github.com/avinashearla86/smart-attendance-platform" target="_blank">GitHub ↗</a>
         <a class="project-link" href="https://smart-attendance-platform.vercel.app/" target="_blank">Live Demo ↗</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">03</div>
+      <div class="project-name">Talent Insights Agent</div>
+      <p class="project-desc">A secure multi-agent recruiting automation pipeline built on Google's Agent Development Kit (ADK), coordinating specialized sub-agents for resume parsing and job matching through an MCP server. Implements a security-checkpoint layer for prompt-injection detection and PII redaction ahead of the orchestration graph, with conditional routing that auto-accepts high-confidence matches and escalates borderline candidates to a human-in-the-loop approval step.</p>
+      <div class="project-stack">
+        <span class="tag">Python</span>
+        <span class="tag">Google ADK</span>
+        <span class="tag">Gemini</span>
+        <span class="tag">MCP</span>
+        <span class="tag">FastAPI</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://github.com/avinashearla86/talent-insights-agent" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">04</div>
+      <div class="project-name">Autonomous Coding Agent</div>
+      <p class="project-desc">A self-correcting coding agent implementing a Generate → Execute → Evaluate → Repair loop with LangGraph, running LLM-generated code inside a locked-down Docker sandbox — no network by default, resource limits, hard execution timeouts. An LLM-as-judge step verifies actual task completion against real file output, not just exit codes, catching silent failures a naive success check would miss.</p>
+      <div class="project-stack">
+        <span class="tag">Python</span>
+        <span class="tag">LangGraph</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Groq</span>
+        <span class="tag">Pandas</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://github.com/avinashearla86/autonomous-coding-agent" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">05</div>
+      <div class="project-name">Ambient Expense Agent</div>
+      <p class="project-desc">A ReAct-pattern agent built on Google's Agent Development Kit, scaffolded with production-grade CI/CD pipelines and Terraform infrastructure-as-code for one-command GCP deployment. Ships with built-in observability — telemetry exported to Cloud Trace, BigQuery, and Cloud Logging — and an automated evaluation harness for grading agent behavior.</p>
+      <div class="project-stack">
+        <span class="tag">Python</span>
+        <span class="tag">Google ADK</span>
+        <span class="tag">ReAct</span>
+        <span class="tag">GCP</span>
+        <span class="tag">Terraform</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://github.com/avinashearla86/ambient-expense-agent" target="_blank">GitHub ↗</a>
       </div>
     </div>
   </div>
