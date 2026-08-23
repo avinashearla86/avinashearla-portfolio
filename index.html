@@ -236,9 +236,9 @@
   <div class="section-label">About</div>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm an <strong>AI Engineer</strong> based in Hyderabad, India, currently building intelligent platforms and agentic systems at Sakesh Solutions LLC.</p>
-      <p>I specialize in designing and deploying <strong>multi-agent orchestrations (LangGraph, CrewAI, AutoGen, Google ADK), Retrieval-Augmented Generation architectures, and low-latency FastAPI microservices</strong>, alongside full-stack work in React and TypeScript and containerized multi-cloud deployments.</p>
-      <p>I graduated with a B.Tech in Computer Science and Business Systems from R.V.R. & J.C. College of Engineering, and I continuously seek to push limits in agentic AI, graph-based systems, and cloud engineering.</p>
+      <p>I'm an <strong>AI Engineer</strong> based in Hyderabad, India, building and scaling <strong>Generative AI and Agentic AI applications</strong> at Sakesh Solutions LLC — from experimental workflows to production-oriented systems.</p>
+      <p>I implement <strong>LLM-powered agents and prompt orchestration using LangGraph and LangChain</strong>, develop <strong>RAG applications on PostgreSQL/pgvector</strong> for embedding-based semantic retrieval and knowledge-aware generation, and design asynchronous <strong>Python/FastAPI</strong> services — including AWS SQS-based worker architectures with long polling, exponential backoff, and idempotent processing.</p>
+      <p>I graduated with a B.Tech in Computer Science and Business Systems from R.V.R. & J.C. College of Engineering, and I continue to build toward deeper agent evaluation, reliability, and multi-cloud deployment practices.</p>
     </div>
     <div class="stats-grid">
       <div class="stat-box">
@@ -284,6 +284,7 @@
         <span class="tag">pgvector</span>
         <span class="tag">FAISS</span>
         <span class="tag">LangGraph</span>
+        <span class="tag">LangChain</span>
         <span class="tag">CrewAI</span>
         <span class="tag">AutoGen</span>
         <span class="tag">Google ADK</span>
@@ -328,13 +329,13 @@
       <div class="exp-type">Hyderabad, India</div>
     </div>
     <div class="exp-content">
-      <div class="exp-role">AI Engineer (Machine Learning & Advanced Modeling)</div>
+      <div class="exp-role">AI Engineer</div>
       <ul class="exp-bullets">
-        <li>Architect, train, and deploy intelligent platforms, multi-step autonomous agentic AI systems, and low-latency REST APIs using Python and asynchronous FastAPI microservices.</li>
-        <li>Build stateful multi-agent orchestrations using LangGraph, CrewAI, and AutoGen, implementing secure tool integrations, Model Context Protocols (MCP), and human-in-the-loop validation.</li>
-        <li>Design custom RAG architectures to parse insights from unstructured datasets, minimizing hallucination rates by 95% and accelerating database indexing by 40%.</li>
-        <li>Develop advanced feature engineering frameworks for relational database interactions, using business-aligned validation metrics (PR-AUC, ROC-AUC).</li>
-        <li>Deploy microservice systems inside containerized Docker instances across multi-cloud test layers (AWS, GCP, Azure) via automated CI/CD pipelines.</li>
+        <li>Build and scale Generative AI and Agentic AI applications from experimental workflows to production-oriented systems, implementing LLM-powered agents and prompt orchestration using LangGraph and LangChain.</li>
+        <li>Develop and optimize RAG applications using PostgreSQL/pgvector for embedding-based semantic retrieval, context grounding, and knowledge-aware generation, reducing hallucination rates by 95%.</li>
+        <li>Design asynchronous Python/FastAPI services for AI workloads, integrating LLM workflows with REST APIs and an AWS SQS-based worker architecture supporting long polling, exponential backoff, visibility-timeout management, and idempotent processing.</li>
+        <li>Implement agent evaluation and reliability mechanisms, including LLM-as-Judge evaluation, response validation, failure handling, and automated feedback loops to improve correctness and consistency of LLM outputs.</li>
+        <li>Deploy containerized AI microservices using Docker and automated CI/CD pipelines across AWS, GCP, and Azure, applying testing and reliability practices for repeatable delivery.</li>
       </ul>
     </div>
   </div>
@@ -345,12 +346,12 @@
       <div class="exp-type">Remote (via CIEL HR Services Ltd.)</div>
     </div>
     <div class="exp-content">
-      <div class="exp-role">Technical Operations & Data Automation Trainee</div>
+      <div class="exp-role">Trainee</div>
       <ul class="exp-bullets">
-        <li>Engineered data pipelines and Python automation workflows to clean, transform, and map high-volume transactional records, cutting 30 hours of manual operational overhead monthly.</li>
-        <li>Optimized relational database query logic and schema architectures through advanced SQL workflows, processing 10,000+ daily transaction logs.</li>
-        <li>Implemented data quality rules, anomaly tracking parameters, and statistical validation patterns to resolve transaction data irregularities.</li>
-        <li>Collaborated inside cross-functional engineering teams using distributed Git workflows, driving code reviews and technical design discussions.</li>
+        <li>Designed and developed Retrieval-Augmented Generation (RAG) applications to ground LLM responses in domain-specific knowledge, improving the relevance, accuracy, and consistency of generated responses.</li>
+        <li>Built end-to-end RAG pipelines covering document ingestion, preprocessing, chunking, embedding generation, semantic retrieval, context construction, and LLM-based response generation.</li>
+        <li>Implemented knowledge retrieval and prompt orchestration workflows that supplied relevant contextual information to LLMs, reducing dependence on model-only knowledge and mitigating hallucinations in generated responses.</li>
+        <li>Developed Python-based RAG services and APIs, integrating retrieval and generation components into application workflows and supporting scalable AI processing.</li>
       </ul>
     </div>
   </div>
@@ -363,14 +364,14 @@
     <div class="project-card">
       <div class="project-num">01</div>
       <div class="project-name">AI Personal Knowledge Assistant</div>
-      <p class="project-desc">An enterprise-grade document intelligence platform that maps unstructured corporate text onto relational vector structures using stateful graph networks via LangGraph. Implements semantic search and contextual memory using pgvector for real-time RAG and document Q&A, with a FastAPI streaming backend delivering transformer inference tokens at sub-second latency.</p>
+      <p class="project-desc">A document Q&A platform built with LangChain and Google Gemini, chunking unstructured documents into 1,000-character segments and generating local FastEmbed (BAAI/bge-small-en-v1.5) embeddings at 384 dimensions — no external embedding API required. Stores vectors in PostgreSQL/pgvector with IVFFlat indexing, retrieving the top-8 most relevant chunks by cosine similarity for sub-second semantic search, grounding every Gemini response in real source content to cut hallucination.</p>
       <div class="project-stack">
         <span class="tag">Python</span>
         <span class="tag">FastAPI</span>
-        <span class="tag">LangGraph</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">Google Gemini</span>
         <span class="tag">pgvector</span>
         <span class="tag">React</span>
-        <span class="tag">TypeScript</span>
       </div>
       <div class="project-links">
         <a class="project-link" href="https://github.com/avinashearla86/Ai-knowledge-Assistant" target="_blank">GitHub ↗</a>
@@ -466,12 +467,16 @@
   <div class="section-title">Credentials</div>
   <div class="certs-list">
     <div class="cert-item">
-      <div class="cert-issuer">Oracle Cloud Infrastructure</div>
-      <div class="cert-name">OCI Certified AI Foundations Associate</div>
+      <div class="cert-issuer">LangChain Academy</div>
+      <div class="cert-name">Deep Agents Certification</div>
     </div>
     <div class="cert-item">
-      <div class="cert-issuer">Microsoft Azure</div>
-      <div class="cert-name">Azure Fundamentals</div>
+      <div class="cert-issuer">Hugging Face</div>
+      <div class="cert-name">AI Agents Fundamentals</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-issuer">Oracle Cloud Infrastructure</div>
+      <div class="cert-name">OCI Certified AI Foundations Associate</div>
     </div>
     <div class="cert-item">
       <div class="cert-issuer">Google Cloud</div>
